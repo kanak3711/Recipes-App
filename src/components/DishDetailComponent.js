@@ -1,11 +1,13 @@
 import React from 'react';
-import {Card,CardImg,CardBody,CardTitle,CardText} from 'reactstrap';
+import { Card, CardImg, 
+    CardTitle,CardBody, CardText, Breadcrumb,BreadcrumbItem } from 'reactstrap';
+import {Link} from 'react-router-dom';
 function DishDetail(props){
 
 
         if (props.dish != null) {
 
-            let list =props.dish.comments.map((comments)=>{
+            let list =props.comments.map((comments)=>{
     
                 return(
                     <li key={comments.id} >
@@ -21,27 +23,37 @@ function DishDetail(props){
     
             return(
                 <div className="container" >
-                    <div className="row">
-                <div  className="col-12 col-md-5 m-1">
-                <Card>
-                    <CardImg top src={props.dish.image} alt={props.dish.name} />
-                    <CardBody>
-                      <CardTitle>{props.dish.name}</CardTitle>
-                      <CardText>{props.dish.description}</CardText>
-                    </CardBody>
-                    
-                </Card>
+                <div className="row">
+                <div class="row">
+                    <Breadcrumb>
+                    <BreadcrumbItem><Link to='/menu'></Link></BreadcrumbItem>
+                    <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
+                    </Breadcrumb>
+                    <div class="col-12">
+                        <h3>{props.dish.name}</h3>
+                        <hr/>
+                    </div>
                 </div>
-                    <div className="col-12 col-md-5 m-1" class="text-left">
+                    <div  className="col-12 col-md-5 m-1">
+                    <Card>
+                        <CardImg top src={props.dish.image} alt={props.dish.name} />
+                        <CardBody>
+                        <CardTitle>{props.dish.name}</CardTitle>
+                        <CardText>{props.dish.description}</CardText>
+                        </CardBody>
                         
-                        <h4 class="font-weight-bold">Comments</h4>
-                        <ul className="list-unstyled" class="font-weight-normal">
-                            {list}
-                        </ul>
-                        
+                    </Card>
                     </div>
-                    </div>
-                    </div>
+                        <div className="col-12 col-md-5 m-1" class="text-left">
+                            
+                            <h4 class="font-weight-bold">Comments</h4>
+                            <ul className="list-unstyled" class="font-weight-normal">
+                                {list}
+                            </ul>
+                            
+                        </div>
+                </div>
+                </div>
             )
         }
         else{
