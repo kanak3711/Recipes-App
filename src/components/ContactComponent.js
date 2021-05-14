@@ -1,7 +1,6 @@
 import React from 'react';
 import {  FormFeedback, Breadcrumb,BreadcrumbItem,Button,Form,FormGroup,Input,Label,Col } from 'reactstrap';
 import {Link} from 'react-router-dom';
-import { render } from '@testing-library/react';
 class Contact extends React.Component{
     constructor(props)
     {
