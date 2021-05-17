@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function RenderLeader ({dish}) {
     return (
         <div class="media" >
-        <img class="align-self-top mr-4" src={dish.image} alt="Generic placeholder image"/>
+        <img class="align-self-top mr-4" src={dish.image} alt="Generic placeholder"/>
         <div class="media-body" class="text-left">
         <h5 class="mt-0" class="text-left">{dish.name}</h5>
         <h6 class="mb-0" class="text-left">{dish.designation}</h6>

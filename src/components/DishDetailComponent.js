@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardImg, 
     CardTitle,CardBody, CardText, Breadcrumb,BreadcrumbItem } from 'reactstrap';
 import {Link} from 'react-router-dom';
+import Comt from './CommentForm';
 function DishDetail(props){
 
 
@@ -23,7 +24,7 @@ function DishDetail(props){
     
             return(
                 <div className="container" >
-                <div className="row">
+                
                 <div class="row">
                     <Breadcrumb>
                     <BreadcrumbItem><Link to='/menu'></Link></BreadcrumbItem>
@@ -34,6 +35,7 @@ function DishDetail(props){
                         <hr/>
                     </div>
                 </div>
+                <div className="row">
                     <div  className="col-12 col-md-5 m-1">
                     <Card>
                         <CardImg top src={props.dish.image} alt={props.dish.name} />
@@ -50,7 +52,7 @@ function DishDetail(props){
                             <ul className="list-unstyled" class="font-weight-normal">
                                 {list}
                             </ul>
-                            
+                            <Comt/>
                         </div>
                 </div>
                 </div>
